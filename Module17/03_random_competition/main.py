@@ -1,4 +1,4 @@
-# TODO здесь писать код
+
 import random
 
 number_of_members = 20
