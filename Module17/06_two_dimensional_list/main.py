@@ -1,4 +1,4 @@
-# TODO здесь писать код
+
 # any_list = []
 # for x in range(4):
 #     any_list.append([])

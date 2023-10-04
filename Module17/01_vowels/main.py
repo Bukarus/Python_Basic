@@ -1,4 +1,4 @@
-# TODO здесь писать код
+
 def analyzer_of_text(user_text):
     list_of_vowel = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я']
     result_list = [char for char in user_text if char in list_of_vowel]

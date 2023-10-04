@@ -1,6 +1,6 @@
 alphabet = 'abcdefg'
 
-# TODO здесь писать код
+
 alphabet_copy = alphabet[:]
 print('Копия строки: ', alphabet_copy)
 print('В обратном порядке:', alphabet[::-1])
