@@ -24,4 +24,15 @@ store = {
     ],
 }
 
-# TODO здесь писать код
+# new_dict = dict()
+
+for name, code in goods.items():
+    total_cost = 0
+    total_quantity = 0
+    for item in store[code]:
+        total_cost += item['quantity'] * item['price']
+        total_quantity += item['quantity']
+    print('{} - {} штук, стоимость - {} руб.'.format(name, total_quantity, total_cost))
+
+    # new_dict[name] = {'стоимость': sum, 'количество': total_quantity}
+# print(new_dict)
