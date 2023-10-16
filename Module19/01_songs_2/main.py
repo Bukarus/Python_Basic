@@ -10,4 +10,7 @@ violator_songs = {
     'Clean': 5.83
 }
 
-# TODO здесь писать код
+quantity = int(input('Сколько песен выбрать? '))
+time = sum([violator_songs[input('Название {} песни: '.format(number + 1))] for number in range(quantity)])
+
+print('Общее время звучания песен: {} минуты'.format(time))
