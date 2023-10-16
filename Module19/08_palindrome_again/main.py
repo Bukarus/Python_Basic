@@ -7,11 +7,24 @@ def is_palindrome(text):
     return text == text[::-1]
 
 
+def can_make_palindrome(text):
+    dict_sym = {}
+    for char in text:
+        if char in dict_sym:
+            dict_sym[char] += 1
+            if dict_sym[char] % 2 == 0:
+                dict_sym.pop(char)
+        else:
+            dict_sym[char] = 1
+    if len(dict_sym) > 1:
+        return False
+    else:
+        return True
+
+
+
 string = input('Введите строку: ')
-for i in range(len(string)):
-    new_string = ''.join(shift_symbol(string, i))
-    if is_palindrome(new_string):
-        print('Можно сделать палиндром', new_string)
-        break
+if can_make_palindrome(string):
+    print('Можно сделать палиндром')
 else:
     print('Нельзя сделать палиндром')
