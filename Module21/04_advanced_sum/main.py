@@ -1,15 +1,11 @@
 def sum(*args):
-    lst = list()
     summa = 0
     for item in args:
         if isinstance(item, int):
-            lst.append(item)
             summa += item
         else:
-            lst.extend(sum(*item)[0])
-            summa += sum(*item)[1]
-    return lst, summa
-
+            summa += sum(*item)
+    return summa
 
 
 print(sum(1, 2, 3))

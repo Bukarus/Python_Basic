@@ -1,31 +1,16 @@
-def key_value(some_dict, search_key, depth=None):
-    if depth is None:
-        if isinstance(some_dict, dict):
-            # print(some_dict)
-            if search_key in some_dict.keys():
-                answer = some_dict[search_key]
-                return answer
-            else:
-                for key, value in some_dict.items():
-                    # print(key)
-                    answer = key_value(value, search_key)
-                    if answer:
-                        return answer
-    elif depth > 0:
-        if isinstance(some_dict, dict):
-            # print(some_dict)
-            depth -= 1
-            if search_key in some_dict.keys():
-                answer = some_dict[search_key]
-                return answer
-            else:
-                for key, value in some_dict.items():
-                    # print(depth)
-                    answer = key_value(value, search_key, depth)
-                    if answer:
-                        return answer
+def key_value(some_dict, search_key, depth=-1):
+    result = None
+    if depth == 0:
+        result = None
+    elif search_key in some_dict:
+        result = some_dict[search_key]
     else:
-        return None
+        for key, value in some_dict.items():
+            if isinstance(value, dict):
+                result = key_value(value, search_key, depth - 1)
+                if result:
+                    break
+    return result
 
 
 site = {
@@ -40,7 +25,6 @@ site = {
         }
     }
 }
-
 
 
 find_key = input('Введите ключ: ')
