@@ -1,6 +1,17 @@
-# TODO здесь писать код
+import math
 
-# Здесь создайте функцию get_sage_sqrt
+
+def get_sage_sqrt(num):
+    try:
+        if str(type(num)) == "<class 'str'>":
+            raise TypeError(f'Корень берется от числа, не строки {num}')
+        elif num < 0:
+            raise ValueError(f'Не могу взять корень от отрицательного числа {num}')
+        else:
+            sqrt_num = math.sqrt(num)
+            return sqrt_num
+    except (ValueError, TypeError) as exc:
+        return exc
 
 
 # Тестовые случаи
