@@ -11,9 +11,9 @@ def validate_strline(string):
     return True
 
 
-with open('registrations.txt', 'r', encoding='utf-8') as reg_file, open('registrations_good.log', 'w',
-                                                                        encoding='utf-8') as good_file, open(
-        'registrations_bad.log', 'w', encoding='utf-8') as bad_file:
+with open('registrations.txt', 'r', encoding='utf-8') as reg_file, \
+        open('registrations_good.log', 'w', encoding='utf-8') as good_file, \
+        open('registrations_bad.log', 'w', encoding='utf-8') as bad_file:
 
     for i_line in reg_file:
         if i_line.endswith('\n'):
